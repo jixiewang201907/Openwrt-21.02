@@ -116,6 +116,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/na
 
 #菜单定制
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
+git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 #svn co https://github.com/Lienol/openwrt/branches/21.02/package/network package/network
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/lean/qBittorrent-Enhanced-Edition package/lean/qBittorrent-Enhanced-Edition
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/qBittorrent package/lean/qBittorrent
