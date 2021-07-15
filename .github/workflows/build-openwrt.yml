@@ -26,12 +26,18 @@ env:
   CONFIG_FILE: official-gcc10.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: openwrt-21.02-diy-part2.sh
+  MRG_ADD_SH: aarch64/ARMv8.sh
+  Update_Ver_SH: aarch64/autoVersion.sh
+  Get_Imgs_SH: aarch64/getImgs.sh
+  DOCKER_BUILD_SH: buildImage.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
+  FILE_NAME: Files4Build
+  PRODUCT_NAME: ARMv8
 
 jobs:
   build:
