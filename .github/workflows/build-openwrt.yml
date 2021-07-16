@@ -115,77 +115,22 @@ jobs:
         echo "DATE_YMD=_$(date +"%Y%m%d")" >> $GITHUB_ENV
         echo "::set-output name=status::success"
     
-    - name: Build firmware
-      id: build
-      run: |
-        sudo mkdir /opt/kernel
-        cd /opt/kernel
-        chmod +x $GITHUB_WORKSPACE/$Get_Imgs_SH
-        sudo $GITHUB_WORKSPACE/$Get_Imgs_SH
-        #sudo cp $GITHUB_WORKSPACE/BuildARMv8/* /opt/kernel/
-        #sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
-        #sudo tar xvzf mk_*.tar.gz
-        cd /opt
-        sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
-        sudo cp $GITHUB_WORKSPACE/scripts/respawn_mks.sh ./
-        sudo git clone https://github.com/unifreq/openwrt_packit openwrt
-        sudo cp $GITHUB_WORKSPACE/scripts/whoami ./openwrt/
-        sudo chmod +x ./respawn_mks.sh
-        sudo ./respawn_mks.sh
-        sudo cp /workdir/openwrt/bin/targets/armvirt/64/openwrt-armvirt-64-default-rootfs.tar.gz /opt/openwrt
-        cd /opt/openwrt
-        chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
-        sudo $GITHUB_WORKSPACE/$Update_Ver_SH
-        sudo ./mk_rk3328_beikeyun.sh
-        #sudo ./mk_rk3328_beikeyun_fol.sh
-        sudo ./mk_rk3328_beikeyun_plus.sh
-        sudo ./mk_rk3328_beikeyun_plusplus.sh
-        sudo ./mk_rk3328_l1pro.sh
-        #sudo ./mk_rk3328_l1pro_fol.sh
-        sudo ./mk_rk3328_l1pro_plus.sh
-        sudo ./mk_rk3328_l1pro_plusplus.sh
-        sudo ./mk_s905d_n1.sh
-        #sudo ./mk_s905d_n1_fol.sh
-        sudo ./mk_s905d_n1_plus.sh
-        sudo ./mk_s905d_n1_plusplus.sh
-        #sudo ./mk_s905x2_x96max.sh
-        #sudo ./mk_s905x2_x96max_fol.sh
-        #sudo ./mk_s905x2_x96max_plus.sh
-        sudo ./mk_s905x3_multi.sh
-        #sudo ./mk_s905x3_multi_fol.sh
-        sudo ./mk_s905x3_multi_plus.sh
-        sudo ./mk_s905x3_multi_plusplus.sh
-        sudo ./mk_s912_zyxq.sh
-        #sudo ./mk_s912_zyxq_fol.sh
-        sudo ./mk_s912_zyxq_plus.sh
-        sudo ./mk_s912_zyxq_plusplus.sh
-        #sudo ./mk_s922x_gtking.sh
-        #sudo ./mk_s922x_gtking_fol.sh
-        #sudo ./mk_s922x_gtking_plus.sh
-        sudo ./mk_h6_vplus.sh
-        #sudo ./mk_h6_vplus_fol.sh
-        sudo ./mk_h6_vplus_plus.sh
-        sudo ./mk_h6_vplus_plusplus.sh
-        sudo cp ./files/update*.sh ./tmp/
-        echo "::set-output name=status::success"
-
-    - name: Organize files
-      id: organize
-      if: steps.build.outputs.status == 'success' && !cancelled()
-      run: |
-        cd /opt/openwrt/tmp/
-        pigz -6 -p $(nproc) *.img
-        rename 's/openwrt/openwrt/' openwrt*gz
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-        echo "::set-output name=status::success"    
-    
     - name: Upload bin directory
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/bin/targets/*/*/bin.tar.gz
+        path: openwrt/bin
 
+    - name: Organize files
+      id: organize
+      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      run: |
+        cd openwrt/bin/targets/*/*
+        rm -rf packages
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+        echo "::set-output name=status::success"    
+    
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: env.UPLOAD_FIRMWARE == 'true' && steps.organize.outputs.status == 'success' && !cancelled()
