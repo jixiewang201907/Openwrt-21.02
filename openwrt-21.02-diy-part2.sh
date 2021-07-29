@@ -114,7 +114,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/t
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust package/shadowsocks-rust
 svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xray-core
 #svn co https://github.com/1715173329/packages-official/branches/xray-2102/net/xray-core feeds/packages/net/xray-core
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin package/xray-plugin
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/v2ray-plugin
@@ -228,7 +228,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package
 #git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 #git clone https://github.com/kevin-morgan/luci-theme-argon-dark.git package/luci-theme-argon-dark
 #svn co https://github.com/openwrt/luci/trunk/themes/luci-theme-openwrt-2020 package/luci-theme-openwrt-2020
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 
 #readd cpufreq for aarch64
