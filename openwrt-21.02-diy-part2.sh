@@ -198,8 +198,8 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package
 #svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/n2n_v2 package/lean/n2n_v2
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-n2n_v2 package/lean/luci-app-n2n_v2
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-advancedsetting package/lean/luci-app-advancedsetting
-#git clone https://github.com/0118Add/luci-app-frpc-mod.git package/luci-app-frp
-#chmod 0755 package/luci-app-frp/root/etc/init.d/frp
+git clone https://github.com/0118Add/luci-app-frpc-mod.git package/luci-app-frp
+chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 
 #添加smartdns
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
@@ -235,7 +235,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 
 # use upx for frp
-sed -i '58 a\    $(STAGING_DIR_HOST)/bin/upx --lzma --best $$(1)/usr/bin/$(1) || true' feeds/packages/net/frp/Makefile
+#sed -i '58 a\    $(STAGING_DIR_HOST)/bin/upx --lzma --best $$(1)/usr/bin/$(1) || true' feeds/packages/net/frp/Makefile
 
 # samba4
 sed -i 's/PKG_VERSION:.*/PKG_VERSION:=4.14.6/' feeds/packages/net/samba4/Makefile
