@@ -22,8 +22,15 @@ rm -rf feeds/luci/collections/luci-lib-docker
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/libs/mbedtls
 rm -rf feeds/packages/net/kcptun
-#rm -rf feeds/packages/net/xray-core
+rm -rf feeds/packages/net/xray-core
 #rm -rf feeds/packages/devel/ninja
+#rm -rf package/libs/elfutils
+rm -rf package/libs/libcap
+rm -rf package/libs/libnftnl
+rm -rf package/libs/libpcap
+rm -rf package/libs/nettle
+rm -rf package/libs/pcre
+rm -f tools/Makefile
 
 # Prepare
 
@@ -55,10 +62,21 @@ patch -p1 < $GITHUB_WORKSPACE/PATCH/new/package/luci-app-firewall_add_fullcone.p
 cp -rf $GITHUB_WORKSPACE/PATCH/duplicate/fullconenat ./package/network/fullconenat
 
 #添加额外软件包
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/libs/mbedtls package/libs/mbedtls
+#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/libs/mbedtls package/libs/mbedtls
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/mbedtls package/libs/mbedtls
 #svn co https://github.com/coolsnowwolf/packages/trunk/devel/ninja feeds/packages/devel/ninja
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3-mount package/lean/ntfs3-mount
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3 package/lean/ntfs3
+#svn co https://github.com/breakings/OpenWrt/trunk/general/ntfs3 package/lean/ntfs3
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/elfutils package/libs/elfutils
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap package/libs/libcap
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libnftnl package/libs/libnftnl
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libpcap package/libs/libpcap
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/nettle package/libs/nettle
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/pcre package/libs/pcre
+svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
+svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+wget -P tools https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/Makefile
 
 # Extra Packages
 # AutoCore
