@@ -198,8 +198,8 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/redsocks2 package
 #svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/n2n_v2 package/lean/n2n_v2
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-n2n_v2 package/lean/luci-app-n2n_v2
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-advancedsetting package/lean/luci-app-advancedsetting
-git clone https://github.com/0118Add/luci-app-frpc-mod.git package/luci-app-frp
-chmod 0755 package/luci-app-frp/root/etc/init.d/frp
+#git clone https://github.com/0118Add/luci-app-frpc-mod.git package/luci-app-frp
+#chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 
 #添加smartdns
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
@@ -210,6 +210,7 @@ chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 #添加ddnsto
 #svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
 #svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
+
 #添加udp2raw
 #git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
 #git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
@@ -232,6 +233,9 @@ chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 #svn co https://github.com/openwrt/luci/trunk/themes/luci-theme-openwrt-2020 package/luci-theme-openwrt-2020
 #git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+
+# use upx for frp
+sed -i '58 a\    $(STAGING_DIR_HOST)/bin/upx --lzma --best $$(1)/usr/bin/$(1) || true' feeds/packages/net/frp/Makefile
 
 # samba4
 sed -i 's/PKG_VERSION:.*/PKG_VERSION:=4.14.6/' feeds/packages/net/samba4/Makefile
