@@ -50,9 +50,9 @@ wget -P target/linux/generic/pending-5.4 https://github.com/immortalwrt/immortal
 #patch -p1 < $GITHUB_WORKSPACE/PATCH/new/package/use_json_object_new_int64.patch
 
 # Patch kernel to fix fullcone conflict
-pushd target/linux/generic/hack-5.4
-wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
-popd
+#pushd target/linux/generic/hack-5.4
+#wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.4/952-net-conntrack-events-support-multiple-registrant.patch
+#popd
 # Patch firewall to enable fullcone
 mkdir package/network/config/firewall/patches
 wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
@@ -69,11 +69,11 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3-mount packa
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ntfs3 package/lean/ntfs3
 #svn co https://github.com/breakings/OpenWrt/trunk/general/ntfs3 package/lean/ntfs3
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/elfutils package/libs/elfutils
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap package/libs/libcap
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libnftnl package/libs/libnftnl
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libpcap package/libs/libpcap
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/nettle package/libs/nettle
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/pcre package/libs/pcre
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap package/libs/libcap
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libnftnl package/libs/libnftnl
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libpcap package/libs/libpcap
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/nettle package/libs/nettle
+#svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/pcre package/libs/pcre
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 wget -P tools https://raw.githubusercontent.com/coolsnowwolf/lede/master/tools/Makefile
