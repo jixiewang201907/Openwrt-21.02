@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
 
 #git clone --single-branch -b openwrt-21.02 https://github.com/openwrt/openwrt
 
@@ -25,11 +25,11 @@ rm -rf feeds/packages/net/kcptun
 rm -rf feeds/packages/net/xray-core
 #rm -rf feeds/packages/devel/ninja
 #rm -rf package/libs/elfutils
-rm -rf package/libs/libcap
-rm -rf package/libs/libnftnl
-rm -rf package/libs/libpcap
-rm -rf package/libs/nettle
-rm -rf package/libs/pcre
+#rm -rf package/libs/libcap
+#rm -rf package/libs/libnftnl
+#rm -rf package/libs/libpcap
+#rm -rf package/libs/nettle
+#rm -rf package/libs/pcre
 rm -f tools/Makefile
 
 # Prepare
