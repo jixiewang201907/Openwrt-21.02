@@ -113,13 +113,13 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus package/t
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/filebrowser package/filebrowser
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/lienol/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall package/luci-app-passwall
-#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust package/shadowsocks-rust
-svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust package/shadowsocks-rust
+#svn co https://github.com/fw876/helloworld/trunk/shadowsocks-rust package/shadowsocks-rust
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xray-core
 #svn co https://github.com/1715173329/packages-official/branches/xray-2102/net/xray-core feeds/packages/net/xray-core
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-plugin package/xray-plugin
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-plugin package/v2ray-plugin
-svn co https://github.com/fw876/helloworld/trunk/v2ray-core package/v2ray-core
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-core package/v2ray-core
 svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks package/ssocks
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/dns2socks package/dns2socks
@@ -133,6 +133,8 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/kcptun package/kcptun
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan package/trojan
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
 #svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
+mkdir package/xray-core/patches
+wget -P package/xray-core/patches https://raw.githubusercontent.com/openwrt/packages/master/net/xray-core/patches/100-go-1.17-deps.patch
 
 #菜单定制
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
@@ -223,6 +225,10 @@ chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 #sed -i "s/PKG_VERSION:=.*/PKG_VERSION:2.0.3/" package/lean/rblibtorrent/Makefile
 #sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:af7a96c1df47fcc8fbe0d791c223b0ab8a7d2125/" package/lean/rblibtorrent/Makefile
 
+# qBittorrent
+sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=4.3.8/" package/lean/qBittorrent/Makefile
+sed -i "s/PKG_HASH:=.*/PKG_HASH:=cc11f797dd146e6aac8feee8feffb1e429d61551f48b577d32b2239ec5e72ccb/" package/lean/qBittorrent/Makefile
+
 # Qt5
 #sed -i "s/PKG_VERSION:=.*/PKG_VERSION:5.15/" package/lean/qt5/Makefile
 #sed -i "s/PKG_HASH:=.*/PKG_HASH:=3a530d1b243b5dec00bc54937455471aaa3e56849d2593edb8ded07228202240/" package/lean/qt5/Makefile
@@ -240,8 +246,8 @@ chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 #sed -i '58 a\    $(STAGING_DIR_HOST)/bin/upx --lzma --best $$(1)/usr/bin/$(1) || true' feeds/packages/net/frp/Makefile
 
 # samba4
-sed -i 's/PKG_VERSION:.*/PKG_VERSION:=4.14.6/' feeds/packages/net/samba4/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=86760692dd74a04705c0f6d11b31965a477265a50e79eb15838184476146f4b0/' feeds/packages/net/samba4/Makefile
+sed -i 's/PKG_VERSION:.*/PKG_VERSION:=4.14.7/' feeds/packages/net/samba4/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=6f50353f9602aa20245eb18ceb00e7e5ec793df0974aebd5254c38f16d8f1906/' feeds/packages/net/samba4/Makefile
 
 #ffmpeg
 sed -i 's/PKG_VERSION:.*/PKG_VERSION:=4.4/' feeds/packages/multimedia/ffmpeg/Makefile
