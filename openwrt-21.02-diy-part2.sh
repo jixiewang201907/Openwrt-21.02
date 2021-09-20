@@ -31,6 +31,7 @@ rm -rf feeds/packages/net/xray-core
 #rm -rf package/libs/nettle
 #rm -rf package/libs/pcre
 rm -f tools/Makefile
+rm -f feeds/packages/net/dnsproxy/Makefile
 
 # Prepare
 
@@ -41,6 +42,7 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 #rm -rf ./include/download.mk
 #wget -P scripts/ https://github.com/immortalwrt/immortalwrt/raw/master/scripts/download.pl
 #wget -P include/ https://github.com/immortalwrt/immortalwrt/raw/master/include/download.mk
+wget -P feeds/packages/net/dnsproxy https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/lean/dnsproxy/Makefile
 
 # Important Patches
 # ARM64: Add CPU model name in proc cpuinfo
@@ -135,6 +137,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/na
 #svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/naiveproxy
 mkdir package/xray-core/patches
 wget -P package/xray-core/patches https://raw.githubusercontent.com/openwrt/packages/master/net/xray-core/patches/100-go-1.17-deps.patch
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsforwarder package/lean/dnsforwarder
 
 #菜单定制
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic-mini.git package/luci-app-unblockneteasemusic-mini
