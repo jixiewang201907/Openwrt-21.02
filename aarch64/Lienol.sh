@@ -6,8 +6,8 @@
 rm -rf package/feeds/kenzo/bpytop
 rm -rf package/feeds/kenzo/luci-app-easymesh
 rm -rf package/feeds/kenzo/luci-app-openclash
-echo 'src-git kenzo https://github.com/kenzok8/small-package' >>feeds.conf.default
-echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+#echo 'src-git kenzo https://github.com/kenzok8/small-package' >>feeds.conf.default
+#echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 
 #使用源码自带ShadowSocksR Plus+出国软件
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
@@ -23,7 +23,8 @@ echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 #git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 #git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 #git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-#git clone https://github.com/Mattraks/helloworld.git package/lean/luci-app-ssr-plus
+git clone https://github.com/kenzok8/small-package.git package/kenzo
+git clone https://github.com/kenzok8/small.git package/small
 #rm -rf feeds/packages/utils/runc
 #rm -rf package/lean/automount
 #svn co https://github.com/Lienol/openwrt/branches/19.07/package/lean/automount package/lean/automount
