@@ -75,6 +75,18 @@ git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 git clone https://github.com/0118Add/luci-app-frpc-mod.git package/luci-app-frp
 chmod 0755 package/luci-app-frp/root/etc/init.d/frp
 
+# Add autocore support for armvirt
+sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
+
+# 添加旁路由防火墙
+echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
+
+# 替换banner
+wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/0118Add/Armbian/main/router/Openwrt_N1/diy/n1_lede/banner
+
+#sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
+sed -i '175i\  --with-sandbox=rlimit \\' feeds/packages/net/openssh//Makefile
+
 #赋予koolddns权限
 #chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 #chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
