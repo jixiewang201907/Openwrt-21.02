@@ -1,4 +1,4 @@
-name: Lienol
+name: Lienol-armvirt
 
 on:
   repository_dispatch:
