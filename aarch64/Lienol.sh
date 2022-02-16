@@ -66,6 +66,8 @@ git clone https://github.com/kenzok8/small.git package/small
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/redsocks2
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-v2ray-server package/luci-app-v2ray-server
+git clone -b revert-271-18.06_bing https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-18.06
+git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 
 #rm -rf package/lean/luci-app-frpc
 #git clone https://github.com/8688Add/luci-app-frpc-mod.git package/lean/luci-app-frpc
