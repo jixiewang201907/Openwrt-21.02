@@ -1,7 +1,7 @@
 # 版本号里显示一个自己的名字（BGG build $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
 #sed -i "s/OpenWrt /BGG build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 
-sed -i 's/PATCHVER:=4.9/PATCHVER:=4.14/g' target/linux/x86/Makefile
+#sed -i 's/PATCHVER:=4.9/PATCHVER:=4.14/g' target/linux/x86/Makefile
 
 rm -rf package/feeds/kenzo/bpytop
 rm -rf package/feeds/kenzo/luci-app-easymesh
