@@ -1,4 +1,4 @@
-name: Lienol x86内核
+name: Lienol
 
 on:
   repository_dispatch:
@@ -15,8 +15,8 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: x86/Lienol.config
-  DIY_P1_SH: x86/Lienol.sh
+  CONFIG_FILE: aarch64/Lienol.config
+  DIY_P1_SH: aarch64/Lienol.sh
   DIY_P2_SH: diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
