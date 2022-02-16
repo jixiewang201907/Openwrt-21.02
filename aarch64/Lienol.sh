@@ -63,7 +63,8 @@ echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 #rm -rf package/lean/luci-theme-argon
 #git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-v2ray-server package/luci-app-v2ray-server
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2 package/redsocks2
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-v2ray-server package/luci-app-v2ray-server
 
 #rm -rf package/lean/luci-app-frpc
 #git clone https://github.com/8688Add/luci-app-frpc-mod.git package/lean/luci-app-frpc
