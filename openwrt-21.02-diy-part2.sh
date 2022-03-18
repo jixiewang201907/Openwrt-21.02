@@ -145,12 +145,12 @@ git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git packag
 #git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 #svn co https://github.com/Lienol/openwrt/branches/21.02/package/network package/network
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/lean/qBittorrent-Enhanced-Edition package/lean/qBittorrent-Enhanced-Edition
-svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent package/qBittorrent
-svn co https://github.com/coolsnowwolf/packages/trunk/libs/rblibtorrent package/rblibtorrent
-svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-qbittorrent package/lean/luci-app-qbittorrent
+#svn co https://github.com/coolsnowwolf/packages/trunk/net/qBittorrent package/qBittorrent
+#svn co https://github.com/coolsnowwolf/packages/trunk/libs/rblibtorrent package/rblibtorrent
+#svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-qbittorrent package/lean/luci-app-qbittorrent
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/lean/luci-app-qbittorrent package/lean/luci-app-qbittorrent
-svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-cpufreq package/lean/luci-app-cpufreq
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-cpufreq package/lean/luci-app-cpufreq
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-cpufreq package/lean/luci-app-cpufreq
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-airplay2 package/lean/luci-app-airplay2
 #svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-21.02/package/lean/luci-app-flowoffload package/lean/luci-app-flowoffload
@@ -163,7 +163,7 @@ svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-turboacc pack
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsproxy package/lean/dnsproxy
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsforwarder package/lean/dnsforwarder
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shortcut-fe package/lean/shortcut-fe
-#svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/lean/openwrt-fullconenat
+git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-cifs-mount package/lean/luci-app-cifs-mount
 #svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-nfs package/lean/luci-app-nfs
 #svn co https://github.com/Lienol/openwrt/branches/21.02/package/lean/luci-app-netdata package/lean/luci-app-netdata
