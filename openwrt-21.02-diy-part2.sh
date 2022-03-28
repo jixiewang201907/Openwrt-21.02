@@ -18,6 +18,7 @@
 #移除不用软件包    
 rm -rf feeds/packages/libs/libgd-full
 rm -rf feeds/luci/collections/luci-lib-docker
+rm -rf feeds/luci/applications/luci-app-frpc
 #rm -rf package/network
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf package/libs/mbedtls
