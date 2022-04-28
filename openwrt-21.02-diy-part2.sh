@@ -47,22 +47,24 @@ sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqba
 #rm -rf ./include/download.mk
 #wget -P scripts/ https://github.com/immortalwrt/immortalwrt/raw/master/scripts/download.pl
 #wget -P include/ https://github.com/immortalwrt/immortalwrt/raw/master/include/download.mk
-wget -P feeds/packages/net/dnsproxy https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/lean/dnsproxy/Makefile
+#wget -P feeds/packages/net/dnsproxy https://raw.githubusercontent.com/coolsnowwolf/packages/master/net/dnsproxy/Makefile
 
 # Important Patches
 # ARM64: Add CPU model name in proc cpuinfo
+wget -P target/linux/generic/pending-5.15 https://github.com/immortalwrt/immortalwrt/raw/master/target/linux/generic/hack-5.15/312-arm64-cpuinfo-Add-model-name-in-proc-cpuinfo-for-64bit-ta.patch
 wget -P target/linux/generic/pending-5.10 https://github.com/immortalwrt/immortalwrt/raw/master/target/linux/generic/hack-5.10/312-arm64-cpuinfo-Add-model-name-in-proc-cpuinfo-for-64bit-ta.patch
 
 # Patch jsonc
 #patch -p1 < $GITHUB_WORKSPACE/PATCH/new/package/use_json_object_new_int64.patch
 
 # Patch kernel to fix fullcone conflict
-pushd target/linux/generic/hack-5.10
-wget https://github.com/coolsnowwolf/lede/raw/master/target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
+pushd target/linux/generic/hack-5.15
+wget https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/generic/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
 popd
+wget -P target/linux/generic/hack-5.10 https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linux/generic/hack-5.15/952-net-conntrack-events-support-multiple-registrant.patch
 # Patch firewall to enable fullcone
 mkdir package/network/config/firewall/patches
-wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/master/package/network/config/firewall/patches/fullconenat.patch
+wget -P package/network/config/firewall/patches/ https://github.com/immortalwrt/immortalwrt/raw/ster/package/network/config/firewall/patches/fullconenat.patch
 # Patch LuCI to add fullcone button
 patch -p1 < $GITHUB_WORKSPACE/PATCH/new/package/luci-app-firewall_add_fullcone.patch
 # FullCone modules
@@ -165,7 +167,7 @@ git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git packag
 #svn co https://github.com/Lienol/openwrt/branches/21.02/package/lean/luci-app-flowoffload package/lean/luci-app-flowoffload
 svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-flowoffload package/lean/luci-app-flowoffload
 svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-turboacc package/lean/luci-app-turboacc
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/lean/openwrt-fullconenat
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/openwrt-fullconenat package/openwrt-fullconenat
 #svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-v2ray-server package/luci-app-v2ray-server
 #svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-turboacc package/lean/luci-app-turboacc
 #svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/dnsproxy package/lean/dnsproxy
