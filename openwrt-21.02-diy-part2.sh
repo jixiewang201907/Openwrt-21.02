@@ -329,8 +329,8 @@ sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=2.5.3/g' feeds/packages/libs/libseccomp/M
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=59065c8733364725e9721ba48c3a99bbc52af921daf48df4b1e012fbc7b10a76/g' feeds/packages/libs/libseccomp/Makefile
 
 # node 
-sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=v14.19.0/g" feeds/packages/lang/node/Makefile
-sed -i "s/PKG_HASH:=.*/PKG_HASH:=e92e846300e6117547d37ea8d5bd32244c19b2fcefcb39e1420a47637f45030c/g" feeds/packages/lang/node/Makefile
+#sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=v14.19.0/g" feeds/packages/lang/node/Makefile
+#sed -i "s/PKG_HASH:=.*/PKG_HASH:=e92e846300e6117547d37ea8d5bd32244c19b2fcefcb39e1420a47637f45030c/g" feeds/packages/lang/node/Makefile
 
 # nss
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=3.76/g' feeds/packages/libs/nss/Makefile
