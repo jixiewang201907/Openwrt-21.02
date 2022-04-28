@@ -15,6 +15,9 @@
 
 #git clone --single-branch -b openwrt-21.02 https://github.com/openwrt/openwrt
 
+# 替换内核
+sed -i 's/PATCHVER:=5.10/PATCHVER:=5.15/g' ./target/linux/x86/Makefile
+
 #移除不用软件包    
 rm -rf feeds/packages/libs/libgd-full
 rm -rf feeds/luci/collections/luci-lib-docker
