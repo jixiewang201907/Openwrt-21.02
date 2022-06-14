@@ -19,7 +19,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
-  FILE_NAME: Files4Build
+  FILE_NAME: ARMv8_immortalwrt
   PRODUCT_NAME: ARMv8_immortalwrt
 jobs:
   build:
