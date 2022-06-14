@@ -19,8 +19,8 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_immortalwrt
-  PRODUCT_NAME: ARMv8_immortalwrt
+  FILE_NAME: ARMv8_immortalwrt_21.02
+  PRODUCT_NAME: ARMv8_immortalwrt_21.02
 jobs:
   build:
     runs-on: ubuntu-18.04
