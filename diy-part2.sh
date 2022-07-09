@@ -34,9 +34,10 @@ git clone https://github.com/kiddin9/openwrt-bypass.git package/bypass
 git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
 git clone https://github.com/0118Add/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-sed -i 's/解除网易云音乐播放限制/解锁网易音乐播放限制/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 #git clone https://github.com/0118Add/pass-ssrp.git package/luci-app-ssr-plus
 #sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i 's/解除网易云音乐播放限制/解锁网易音乐播放限制/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
+sed -i 's/"阿里云盘 WebDAV"/"阿里云盘"/g' package/aliyundrive-webdav/openwrt/luci-app-aliyundrive-webdav/po/zh-cn/aliyundrive-webdav.po
 
 #sed -i 's/V2ray 服务器/V2ray 服务/g' package/luci-app-v2ray-server/po/zh-cn/v2ray_server.po
 # 调整 V2ray服务 到 VPN 菜单"
