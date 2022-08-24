@@ -13,6 +13,10 @@
 # 更改主机名
 sed -i "s/hostname='.*'/hostname='N1'/g" package/base-files/files/bin/config_generate
 
+# 更改固件版本信息
+sed -i "s|DISTRIB_REVISION='.*'|DISTRIB_REVISION=''|g" package/base-files/files/etc/openwrt_release
+sed -i "s|DISTRIB_DESCRIPTION='.*'|DISTRIB_DESCRIPTION='OpenWrt 21.02'|g" package/base-files/files/etc/openwrt_release
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.10/g' package/base-files/files/bin/config_generate
 
