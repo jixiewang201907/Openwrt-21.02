@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Lienol OpenWrt
+name: Build n1-lede
 
 on:
   repository_dispatch:
@@ -23,18 +23,18 @@ on:
     #- cron: 0 3 * * *
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 22.03
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ceshi.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  CONFIG_FILE: n1-lede.config
+  DIY_P1_SH: n1-lede-diy-part1.sh
+  DIY_P2_SH: n1-lede-diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_Lienol
-  PRODUCT_NAME: ARMv8_Lienol
+  FILE_NAME: n1-lede
+  PRODUCT_NAME: n1-lede
 
 jobs:
   build:
@@ -179,9 +179,9 @@ jobs:
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: main
-        token: ${{ secrets.RELEASES_TOKEN }}
+        token: ${{ secrets.GH_TOKEN }}
         body: |
-          默认IP：192.168.2.10 默认密码：password
+          默认IP：192.168.2.200 默认密码：password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
