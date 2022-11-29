@@ -10,8 +10,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-21.02
+  REPO_URL: https://github.com/jixiewang201907/immortalwrt
+  REPO_BRANCH: 21.02-20221031
   FEEDS_CONF: aarch64/feeds.conf.default
   CONFIG_FILE: Immortalwrt.config
   DIY_P1_SH: diy-part1.sh
