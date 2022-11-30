@@ -44,7 +44,7 @@ svn co https://github.com/0118Add/helloworld/trunk/luci-app-ssr-plus package/luc
 #git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/emortal/luci-app-adguardhome
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash package/luci-app-openclash
-
+svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 
 # 修改插件名字
 #sed -i 's/Frp 内网穿透/内网穿透/g' package/luci-app-frpc/po/zh-cn/frp.po
